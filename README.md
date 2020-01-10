@@ -42,7 +42,7 @@ jsdoc your-documented-file.js -t ./node_modules/better-docs
 
 In your projects package.json file - add a new script:
 
-```
+```json
 "script": {
   "docs": "jsdoc -c jsdoc.json"
 }
@@ -64,7 +64,7 @@ better-docs has a plugin which allows you to generate documentation from your Ty
 
 To use it update your `jsdoc.json` file
 
-```
+```json
 ...
 "tags": {
     "allowUnknownTags": ["optional"] //or true
@@ -97,7 +97,7 @@ so they can be printed by JSDoc automatically.
 
 ## Examples
 
-```
+```typescript
 /**
  * ActionRequest
  * @memberof Action
@@ -128,7 +128,7 @@ export type ActionRequest = {
 
 is converted to:
 
-```
+```js
 /**
  * ActionRequest'
  * @memberof Action'
@@ -144,7 +144,7 @@ is converted to:
 
 Also you can comment the interface in a similar fashion:
 
-```
+```typescript
 /**
  * JSON representation of an {@link Action}
  * @see Action
@@ -184,7 +184,7 @@ export default interface ActionJSON {
 
 or describe your class properties like that:
 
-```
+```typescript
 /**
  * Class name
  */
@@ -218,7 +218,7 @@ better-docs also allows you to nest your documentation into categories in the si
 
 To add a plugin - update `plugins` section in your `jsdoc.json` file:
 
-```
+```json
 ...
 "tags": {
     "allowUnknownTags": ["category"] //or true
@@ -231,7 +231,7 @@ To add a plugin - update `plugins` section in your `jsdoc.json` file:
 
 and then you can use `@category` tag in your code:
 
-```
+```typescript
 /**
  * Class description
  * @category Category
@@ -249,7 +249,7 @@ Better-docs also allows you to document your [React](https://reactjs.org/) and [
 
 Similar as before to add a plugin - you have to update the `plugins` section in your `jsdoc.json` file:
 
-```
+```json
 ...
 "tags": {
     "allowUnknownTags": ["component"] //or true
@@ -262,7 +262,7 @@ Similar as before to add a plugin - you have to update the `plugins` section in 
 
 Since __component__ plugin uses [parcel](https://parceljs.org) as a bundler you have to install it globally. To do this run:
 
-```
+```bash
 # if you use npm
 npm install -g parcel-bundler
 
